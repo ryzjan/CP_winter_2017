@@ -12,8 +12,9 @@ public class EmailCheck {
         final String EMAIL_NOT_OK4="user@.pl";
         final String EMAIL_NOT_OK5="user@sgh.";
         final String EMAIL_NOT_OK6="user@@sgh.pl";
+        final String EMAIL_NOT_OK7="user@@sghpl";
 
-        String email=EMAIL_OK;
+        String email=EMAIL_NOT_OK7;
 
 
             if (email.startsWith("@")) {
