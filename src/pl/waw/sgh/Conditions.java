@@ -69,7 +69,7 @@ public class Conditions {
             c=2;
         //to samo:
         c = (b>4)?b:2;
-
+        //dodany komentarz
 
 
     }
