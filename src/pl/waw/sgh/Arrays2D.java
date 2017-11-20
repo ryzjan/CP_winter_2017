@@ -13,6 +13,18 @@ public class Arrays2D {
         arr2D[2][3]=985;
 
         System.out.println("Length of arr2D: "+arr2D.length);
+        System.out.println("#columns of arr2D: "+arr2D[0].length);
+
+        //for loop - prints the arr2D
+        for(int i=0;i<arr2D.length;i++){
+            for(int j=0;j<arr2D[i].length;j++) {
+                //not println
+                System.out.print(arr2D[i][j]);
+            }
+            System.out.println("|");
+        }
+        System.out.println("------");
+        }
     }
 
-}
+
