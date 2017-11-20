@@ -24,7 +24,8 @@ public class Arrays {
 
         for(int i=0; i<myIntArr.length; i++) {
             System.out.println("myIntArr, element " +i+" = "+myIntArr[i]);
-        //if breaks here, program shows null elements of myIntArr}
+        //if breaks here, program shows null elements of myIntArr
+            }
 
     }
 
