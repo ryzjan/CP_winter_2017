@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class FileOps {
 
-    static final String FILE_LOC="loc";
+    static final String FILE_LOC="/home/jas/a.txt";
 
     public static void main(String[] args) throws
     FileNotFoundException{
