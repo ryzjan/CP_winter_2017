@@ -43,6 +43,7 @@ public class TicTacToe {
         System.out.println("------");
         boolean isWon=false;
         //check rows
+        {
             for (int a = 0; a < 3; a++) {
                 int sum = 0;
                 for (int b = 0; b < 3; b++) {
@@ -50,11 +51,11 @@ public class TicTacToe {
                 }
                 if (sum == 3) {
                     System.out.println("Player X wins!");
-                    isWon=true;
+                    isWon = true;
                     break;
                 } else if (sum == -3) {
                     System.out.println("Player O wins!");
-                    isWon=true;
+                    isWon = true;
                     break;
                 } else {
                     continue;
@@ -68,11 +69,11 @@ public class TicTacToe {
                 }
                 if (sum == 3) {
                     System.out.println("Player X wins!");
-                    isWon=true;
+                    isWon = true;
                     break;
                 } else if (sum == -3) {
                     System.out.println("Player O wins!");
-                    isWon=true;
+                    isWon = true;
                     break;
                 } else {
                     continue;
@@ -84,11 +85,11 @@ public class TicTacToe {
                 sum1 += arr2D[a][a];
                 if (sum1 == 3) {
                     System.out.println("Player X wins!");
-                    isWon=true;
+                    isWon = true;
                     break;
                 } else if (sum1 == -3) {
                     System.out.println("Player O wins!");
-                    isWon=true;
+                    isWon = true;
                     break;
                 } else {
                     continue;
@@ -100,19 +101,40 @@ public class TicTacToe {
                 sum2 += arr2D[a][-(a - 2)];
                 if (sum2 == 3) {
                     System.out.println("Player X wins!");
-                    isWon=true;
+                    isWon = true;
                     break;
                 } else if (sum2 == -3) {
                     System.out.println("Player O wins!");
-                    isWon=true;
+                    isWon = true;
                     break;
                 } else
                     continue;
 
-                }
+            }
 
 
-            System.out.println(isWon);
+            if (isWon==false){
+                int c=0;
+                for(int a=0; a<3;a++){
+                    for(int b=0;b<3;b++){
+                        if (arr2D[a][b]==0) {
+                            c++;
+                            if (c > 0) {
+                                System.out.println("The game is not over yet!");
+                                break;
+                            }
+
+                        }
+
+                        }
+                    }
+                if(c==0)
+                    System.out.println("Nobody won - the game is a draw.");
+            }
+            }
+
+
+        }
 
 
     }
@@ -121,7 +143,7 @@ public class TicTacToe {
 
 
 
-    }
+
 
 
 
