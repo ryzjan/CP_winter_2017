@@ -41,64 +41,82 @@ public class TicTacToe {
             System.out.println("|");
         }
         System.out.println("------");
+        boolean isWon=false;
         //check rows
-        for (int a = 0; a < 3; a++) {
-            int sum = 0;
-            for (int b = 0; b < 3; b++) {
-                sum += arr2D[a][b];
+            for (int a = 0; a < 3; a++) {
+                int sum = 0;
+                for (int b = 0; b < 3; b++) {
+                    sum += arr2D[a][b];
+                }
+                if (sum == 3) {
+                    System.out.println("Player X wins!");
+                    isWon=true;
+                    break;
+                } else if (sum == -3) {
+                    System.out.println("Player O wins!");
+                    isWon=true;
+                    break;
+                } else {
+                    continue;
+                }
             }
-            if (sum == 3) {
-                System.out.println("Player X wins!");
-                break;
-            } else if (sum == -3) {
-                System.out.println("Player O wins!");
-                break;
-            } else
-                continue;
-        }
-        //check columns
-        for (int a = 0; a < 3; a++) {
-            int sum = 0;
-            for (int b = 0; b < 3; b++) {
-                sum += arr2D[b][a];
+            //check columns
+            for (int a = 0; a < 3; a++) {
+                int sum = 0;
+                for (int b = 0; b < 3; b++) {
+                    sum += arr2D[b][a];
+                }
+                if (sum == 3) {
+                    System.out.println("Player X wins!");
+                    isWon=true;
+                    break;
+                } else if (sum == -3) {
+                    System.out.println("Player O wins!");
+                    isWon=true;
+                    break;
+                } else {
+                    continue;
+                }
             }
-            if (sum == 3) {
-                System.out.println("Player X wins!");
-                break;
-            } else if (sum == -3) {
-                System.out.println("Player O wins!");
-                break;
-            } else
-                continue;
-        }
-        //check diagonal 1
-        int sum1 = 0;
-        for (int a = 0; a < 3; a++) {
-            sum1 += arr2D[a][a];
-            if (sum1 == 3) {
-                System.out.println("Player X wins!");
-                break;
-            } else if (sum1 == -3) {
-                System.out.println("Player O wins!");
-                break;
-            } else
-                continue;
-        }
-        //check diagonal 2
-        int sum2 = 0;
-        for (int a = 2; a >= 0; a--) {
-            sum2 += arr2D[a][-(a-2)];
-            if (sum2 == 3) {
-                System.out.println("Player X wins!");
-                break;
-            } else if (sum2 == -3) {
-                System.out.println("Player O wins!");
-                break;
-            } else
-                continue;
-        }
+            //check diagonal 1
+            int sum1 = 0;
+            for (int a = 0; a < 3; a++) {
+                sum1 += arr2D[a][a];
+                if (sum1 == 3) {
+                    System.out.println("Player X wins!");
+                    isWon=true;
+                    break;
+                } else if (sum1 == -3) {
+                    System.out.println("Player O wins!");
+                    isWon=true;
+                    break;
+                } else {
+                    continue;
+                }
+            }
+            //check diagonal 2
+            int sum2 = 0;
+            for (int a = 2; a >= 0; a--) {
+                sum2 += arr2D[a][-(a - 2)];
+                if (sum2 == 3) {
+                    System.out.println("Player X wins!");
+                    isWon=true;
+                    break;
+                } else if (sum2 == -3) {
+                    System.out.println("Player O wins!");
+                    isWon=true;
+                    break;
+                } else
+                    continue;
+
+                }
+
+
+            System.out.println(isWon);
+
 
     }
+
 
 
 
