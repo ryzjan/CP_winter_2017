@@ -1,4 +1,4 @@
-package pl.waw.sgh.obj;
+package pl.waw.sgh;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
