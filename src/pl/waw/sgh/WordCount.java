@@ -15,7 +15,7 @@ public class WordCount {
         while (wordScanner.hasNext()) {
             String wordLine = wordScanner.nextLine();
             //Found a way to set more than one "splitting" symbol (use of "[...]"), because the analysis was unsuccessful:
-            String[] word = wordLine.split("[,.:“”() ]");
+            String[] word = wordLine.split("[,.:“”()’ ]");
             for (String wo : word) {
 
                 if (!wordMap.containsKey(wo))
