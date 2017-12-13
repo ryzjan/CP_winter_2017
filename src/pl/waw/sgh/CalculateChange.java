@@ -26,7 +26,7 @@ public class CalculateChange {
                     l++;
                 }
                 //defines array of appropriate number of rows (without headers):
-                double[][] arr = new double[(l-1)][2];
+                double[][] arr = new double[(l)][2];
                 System.out.println("File " + listOfFiles[i].getName());
                 Scanner scan = new Scanner(listOfFiles[i]);
                 int k = 0;
@@ -51,6 +51,42 @@ public class CalculateChange {
 
                     k++;
                 }
+                //Double arrResults[]=new Double[l-1];
+
+                //for (int m=0; m<=(l-2);m++){
+                    //arrResults[m]=((arr[m][1]-arr[m][0])/arr[m][0])*100;
+
+                    Scanner scan1 = new Scanner(listOfFiles[i]);
+                    int m=-1;
+                    while (scan1.hasNext()) {
+                        if(m>-1) {
+                            Double z = ((arr[m][1] - arr[m][0]) / arr[m][0]) * 100;
+                            String row1 = scan1.nextLine();
+                            FileWriter fw = new FileWriter(listOfFiles[i]+"_1", true);
+                            BufferedWriter bw = new BufferedWriter(fw);
+                            bw.newLine();
+                            bw.write(row1 + ", " + Double.toString(z) + "%");
+                            bw.close();
+                            fw.close();
+                        }
+                        if(m==-1) {
+                            String row1 = scan1.nextLine();
+                            FileWriter fw = new FileWriter(listOfFiles[i]+"_1", true);
+                            BufferedWriter bw = new BufferedWriter(fw);
+                            //bw.newLine();
+                            bw.write(row1);
+                            bw.close();
+                            fw.close();
+                        }
+                        m++;
+                    //}
+
+
+
+
+
+                }
+
 
 
 
