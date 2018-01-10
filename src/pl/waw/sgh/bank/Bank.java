@@ -9,26 +9,36 @@ public class Bank {
     private Integer Last_Customer_ID=0;
     private Integer Last_Account_ID=0;
 
+    private Double Balance;
+
     private Account FindAccountByID(Integer ID){
         for(Account TempAcc:Account_list){
             if(TempAcc.getAccount_ID().equals(ID)) {
                 return TempAcc;
             }
-
-
         }
         return null;
     }
 
+
+
     public void Transfer(Integer FromAccID, Integer ToAccID, double Amount){
+        Account FromAccount = FindAccountByID(FromAccID);
+        Double Balance0 = FromAccount.getBalance().doubleValue();
+        //exception handling - amount less or equal 0:
+        if(Amount<=0){
+            System.out.println("Amount has to be greater than 0! You wanted to transfer: " + Amount +" from account ID: " + FromAccID + "\nPlease provide amount greater than 0 to carry out the operation" );
+        }
+        //exception handling - amount greater than balance:
+        else if (Amount >= Balance0){
+            System.out.println("Insufficient funds. Amount has to be smaller than or equal to your balance! You wanted to transfer: " + Amount +" from account ID: " + FromAccID + "\nCurrent balance of account ID: "+ FromAccID + " is: " + Balance0 +"\nPlease provide correct amount to carry out the operation");
+        }
 
-
-
-
-        Account FromAccount=FindAccountByID(FromAccID);
-        Account ToAccount=FindAccountByID(ToAccID);
-        FromAccount.charge(Amount);
-        ToAccount.deposit(Amount);
+        else {
+            Account ToAccount = FindAccountByID(ToAccID);
+            FromAccount.charge(Amount);
+            ToAccount.deposit(Amount);
+        }
     }
     public Customer CreateCustomer(String First_Name, String Last_Name, String Email){
         Customer Customer=new Customer(Last_Customer_ID++,First_Name,Last_Name,Email);

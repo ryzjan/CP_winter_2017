@@ -21,8 +21,8 @@ public class PlayWithBank {
         acc2.Charge(50);
         acc3.Deposit(105);
 
-        bank.Transfer(1, 0, 40);
-        acc1.Charge(500);
+        bank.Transfer(1, 0, 1000);
+        acc1.Charge(50);
         System.out.println(bank);
     }
     }
