@@ -47,6 +47,15 @@ public abstract class Account {
         this.Customer = Customer;
     }
 
+    public void charge(double Amount) {
+
+        Balance = Balance.subtract(new BigDecimal(Amount));
+    }
+    public void deposit(double Amount) {
+
+        Balance = Balance.add(new BigDecimal(Amount));
+    }
+
     @Override
     public String toString() {
         return this.getClass().getSimpleName().replace("Account", "") +

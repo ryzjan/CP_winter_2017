@@ -20,5 +20,12 @@ public class Bank {
         return null;
     }
 
+    public void Transfer(Integer FromAccID, Integer ToAccID, double Amount){
+        Account FromAccount=FindAccountByID(FromAccID);
+        Account ToAccount=FindAccountByID(ToAccID);
+        FromAccount.charge(Amount);
+        ToAccount.deposit(Amount);
+    }
+
 
 }
