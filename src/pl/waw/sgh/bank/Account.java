@@ -18,7 +18,13 @@ public abstract class Account {
 
     }
     public void Deposit(double Amount){
-        Balance=Balance.add(new BigDecimal(Amount));
+        //exeption:
+        if(Amount<=0){
+            System.out.println("Amount has to be more than 0!");
+            Balance=Balance.add(new BigDecimal(0));
+        }
+        else
+        {Balance=Balance.add(new BigDecimal(Amount));}
     }
     public void Charge(double Amount){
         Balance=Balance.subtract(new BigDecimal(Amount));

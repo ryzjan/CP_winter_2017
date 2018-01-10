@@ -16,10 +16,10 @@ public class PlayWithBank {
         Account acc4 = bank.CreateSavingsAccount(c2);
 
         System.out.println(bank);
-        acc1.deposit(500);
-        acc2.deposit(312);
-        acc2.charge(50);
-        acc3.deposit(105);
+        acc1.Deposit(-10);
+        acc2.Deposit(312);
+        acc2.Charge(50);
+        acc3.Deposit(105);
 
         bank.Transfer(1, 0, 40);
         System.out.println(bank);
