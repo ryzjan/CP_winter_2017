@@ -18,9 +18,9 @@ public abstract class Account {
 
     }
     public void Deposit(double Amount){
-        //exeption handling - amount less or equal 0:
+        //exception handling - amount less or equal 0:
         if(Amount<=0){
-            System.out.println("Amount has to be more than 0! You wanted to deposit: " + Amount +" on account ID: " + getAccount_ID() + "\nPlease provide amount greater than 0 to carry out the operation" );
+            System.out.println("Amount has to be greater than 0! You wanted to deposit: " + Amount +" on account ID: " + getAccount_ID() + "\nPlease provide amount greater than 0 to carry out the operation" );
             Balance=Balance.add(new BigDecimal(0));
         }
         else
@@ -28,13 +28,13 @@ public abstract class Account {
     }
     public void Charge(double Amount){
         Double Balance1=getBalance().doubleValue();
-        //exeption handling - amount less or equal 0:
+        //exception handling - amount less or equal 0:
         if(Amount<=0){
-            System.out.println("Amount has to be more than 0! You wanted to charge: " + Amount +" on account ID: " + getAccount_ID() + "\nPlease provide amount greater than 0 to carry out the operation" );
+            System.out.println("Amount has to be greater than 0! You wanted to charge: " + Amount +" on account ID: " + getAccount_ID() + "\nPlease provide amount greater than 0 to carry out the operation" );
             Balance=Balance.add(new BigDecimal(0));
         }
 
-        //exeption handling - amount greater than balance:
+        //exception handling - amount greater than balance:
 
         else if (Amount >= Balance1){
             System.out.println("Insufficient funds. Amount has to be smaller than or equal to your balance! You wanted to charge: " + Amount +" on account ID: " + getAccount_ID() + "\nCurrent balance of account ID: "+ getAccount_ID() + " is: "+ getBalance() +"\nPlease provide correct amount to carry out the operation" );
