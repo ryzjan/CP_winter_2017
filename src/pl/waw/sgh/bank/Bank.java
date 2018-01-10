@@ -45,7 +45,7 @@ public class Bank {
     }
 
     public List <Customer> getCustomer_list(){
-        this.Customer_list=Customer_list;
+        return Customer_list;
     }
     public void setCustomer_list(List<Customer> Customer_list){
         this.Customer_list=Customer_list;
