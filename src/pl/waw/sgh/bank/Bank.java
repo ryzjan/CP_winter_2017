@@ -26,6 +26,45 @@ public class Bank {
         FromAccount.charge(Amount);
         ToAccount.deposit(Amount);
     }
+    public Customer CreateCustomer(String First_Name, String Last_Name, String Email){
+        Customer Customer=new Customer(Last_Customer_ID++,First_Name,Last_Name,Email);
+        Customer_list.add(Customer);
+        return Customer;
+    }
+
+    private Account CreateAccount(Customer Customer, boolean isSavings){
+        Account acc=(isSavings ? new SavingsAccount(Last_Account_ID++,0d,Customer):new DebitAccount(Last_Account_ID++,0d,Customer));
+        Account_list.add(acc);
+        return acc;
+    }
+    public Account CreateSavingsAccount(Customer Customer){
+        return  CreateAccount(Customer, true);
+    }
+    public Account CreateDebitAccount(Customer Customer){
+        return CreateAccount(Customer,false);
+    }
+
+    public List <Customer> getCustomer_list(){
+        this.Customer_list=Customer_list;
+    }
+    public void setCustomer_list(List<Customer> Customer_list){
+        this.Customer_list=Customer_list;
+    }
+
+    public List<Account> getAccount_list() {
+        return Account_list;
+    }
+    public void setAccount_list(List<Account> Account_list){
+        this.Account_list=Account_list;
+    }
 
 
+    @Override
+    public String toString() {
+        return "Bank{" +
+                "customers=\n" + Customer_list +
+                ",\n accounts=\n" + Account_list +
+                '}';
+    }
 }
+
