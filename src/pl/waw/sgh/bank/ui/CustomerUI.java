@@ -33,6 +33,27 @@ public class CustomerUI {
         Frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Frame1.setVisible(true);
     }
+    public void ChooseCustomer(Customer Customer){
+        Customer_a=Customer;
+        textField_ID.setText(Customer.getCustomer_ID().toString());
+        textField_FirstName.setText(Customer.getFirst_name());
+        textField_LastName.setText(Customer.getLast_name());
+        textField_Email.setText(Customer.getEmail().toString());
+
+    }
+
+    public CustomerUI(){
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int CustIndex =bank.getCustomer_list().indexOf(Customer_a);
+            }
+        });
+
+
+    }
+
+
 
 
 
