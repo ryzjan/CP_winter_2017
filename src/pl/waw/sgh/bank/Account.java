@@ -4,6 +4,7 @@ public abstract class Account {
     private Integer Account_ID;
     private BigDecimal Balance;
     private Customer Customer;
+    private String Currency="USD";
 
 
 
@@ -76,12 +77,20 @@ public abstract class Account {
         Balance = Balance.add(new BigDecimal(Amount));
     }
 
+    public String getCurrency() {
+        return Currency;
+    }
+
+    public void setCurrency(String Currency) {
+        this.Currency = Currency;
+    }
+
     @Override
     public String toString() {
         return this.getClass().getSimpleName().replace("Account", "") +
                 "{" +
                 "ID=" + Account_ID +
-                ", USD=" + Balance +
+                "," + Currency + "=" + Balance +
                 ", cust=" + Customer.getCustomer_ID() +
                 "}\n";
     }
