@@ -32,7 +32,7 @@ public class Customer {
     }
 
     public void setLast_name(String Last_name) {
-        Last_name = Last_name;
+        this.Last_name = Last_name;
     }
 
     public String getEmail() {
@@ -40,7 +40,7 @@ public class Customer {
 
     }
     public void setEmail(String Email) {
-        Email = Email;
+        this.Email = Email;
     }
 
     @Override
