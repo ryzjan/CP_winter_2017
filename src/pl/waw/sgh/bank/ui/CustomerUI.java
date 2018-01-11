@@ -17,7 +17,6 @@ public class CustomerUI {
     private JTextField textField_Email;
     private JButton nextButton;
     private JButton previousButton;
-    private JButton newButton;
     private JButton saveButton;
 
     private Bank bank = new Bank();
@@ -47,8 +46,27 @@ public class CustomerUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int CustIndex =bank.getCustomer_list().indexOf(Customer_a);
+                if(CustIndex==bank.getCustomer_list().size()){}
+                    else {
+                    ChooseCustomer(bank.getCustomer_list().get(CustIndex+1));
+                }
+
+
+
+                }
+            }
+        );
+        previousButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int CustIndex=bank.getCustomer_list().indexOf(Customer_a);
+                if(CustIndex>0){
+                    ChooseCustomer(bank.getCustomer_list().get(CustIndex-1));
+
+                }
             }
         });
+
 
 
     }
