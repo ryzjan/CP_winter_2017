@@ -1,5 +1,12 @@
 package pl.waw.sgh.bank.ui;
 
+import pl.waw.sgh.bank.Bank;
+import pl.waw.sgh.bank.Customer;
+import pl.waw.sgh.bank.exceptions.BankException;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 public class CustomerUI {
@@ -8,4 +15,26 @@ public class CustomerUI {
     private JTextField textField_ID;
     private JTextField textField_LastName;
     private JTextField textField_Email;
+    private JButton nextButton;
+    private JButton previousButton;
+    private JButton newButton;
+    private JButton saveButton;
+
+    private Bank bank = new Bank();
+    private Customer Customer_a;
+
+
+
+    public static void main(String[] args) {
+        JFrame Frame1=new JFrame("Customer UI");
+        CustomerUI CustomerUI=new CustomerUI();
+        Frame1.add(CustomerUI.panel1);
+        Frame1.setSize(500 ,300);
+        Frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Frame1.setVisible(true);
+    }
+
+
+
 }
+
