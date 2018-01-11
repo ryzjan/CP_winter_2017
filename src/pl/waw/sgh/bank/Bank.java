@@ -1,4 +1,6 @@
 package pl.waw.sgh.bank;
+import pl.waw.sgh.bank.exceptions.BankException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +11,23 @@ public class Bank {
     private Integer Last_Customer_ID=0;
     private Integer Last_Account_ID=0;
 
-    private Double Balance;
+    //private Double Balance;
+
+    public List<Account> FindAccountByCustomer(Customer Customer){
+
+        List<Account> CustomerAccounts=new ArrayList<>();
+        for(Account Account : Account_list){
+            if(Account.getCustomer().equals(Customer)) CustomerAccounts.add(Account);
+        }
+        return CustomerAccounts;
+    }
+
+    public Customer FindCustomerByID(Integer ID) throws BankException{
+        for(Customer Customer : Customer_list){
+            if(ID.equals(Customer.getCustomer_ID())) return Customer;
+        }
+        throw new BankException("Customer with ID: " + ID + " does not exist");
+    }
 
     private Account FindAccountByID(Integer ID){
         for(Account TempAcc:Account_list){
