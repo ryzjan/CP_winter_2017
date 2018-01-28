@@ -419,6 +419,10 @@ public class TaxUI {
         saveChangesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(textField_TaxpayerID.getText().isEmpty()||textField_EmployerID.getText().isEmpty()){
+                    JOptionPane.showMessageDialog(null, "Please enter the correct Taxpayer ID/Employer ID!");
+                }
+                else {
 
                     try {
                         TaxAccount TaxAccount_n = tax.CreateTaxAccount(tax.FindTaxpayerByID(Integer.valueOf(textField_TaxpayerID.getText())), tax.FindEmployerByID(Integer.valueOf(textField_EmployerID.getText())), BigDecimal.valueOf(Double.valueOf(textField_Income.getText())), BigDecimal.valueOf(Double.valueOf(textField_DeductibleExpenses.getText())), Double.valueOf(textField_Advance.getText()), BigDecimal.valueOf(Double.valueOf(textField_SocialInsurance.getText())), (Double.valueOf(textField_HealthInsurance.getText())));
@@ -449,7 +453,7 @@ public class TaxUI {
 
                     }
 
-                }
+                }}
             }
         );
 
