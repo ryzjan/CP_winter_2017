@@ -27,7 +27,7 @@ public class Employer {
 
         @Override
         public String toString(){
-            return Employer_ID+","+Employer_name+"\n";
+            return "\n"+Employer_ID+","+Employer_name+"\n";
         }
 
     }

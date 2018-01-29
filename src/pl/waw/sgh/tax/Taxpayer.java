@@ -40,7 +40,7 @@ public class Taxpayer {
 
     @Override
     public String toString(){
-        return Taxpayer_ID+","+First_name+","+Last_name+","+Address+"\n";
+        return "\n"+Taxpayer_ID+","+First_name+","+Last_name+"\n";
     }
 
 }

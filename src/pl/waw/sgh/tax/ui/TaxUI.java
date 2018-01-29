@@ -12,9 +12,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
 import pl.waw.sgh.tax.exceptions.TaxException;
 
 public class TaxUI {
+    static final String FILE_LOC="/home/jas/TAX.csv";
     private JPanel panel1;
 
     private JTextField textField_FirstName;
@@ -42,6 +49,7 @@ public class TaxUI {
 
     private JButton createViewTaxpayersButton;
     private JButton createViewEmployersButton;
+    private JButton exportButton;
 
     private Tax tax = new Tax();
 
@@ -409,6 +417,8 @@ public class TaxUI {
                                               textField_TaxDue_s.setText("");
                                               textField_TaxOverpaid_s.setText("");
 
+                                          System.out.println(tax);
+
 
 
 
@@ -457,6 +467,15 @@ public class TaxUI {
             }
         );
 
+        exportButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                Print();
+            }
+            catch (IOException a){}}
+        });
+
         createViewTaxpayersButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -467,6 +486,20 @@ public class TaxUI {
             public void actionPerformed(ActionEvent e) {
                 EmployerUI();
             }});
+
+
+    }
+
+    public void Print()throws IOException{
+        File file=new File(FILE_LOC);
+        FileWriter fw=new FileWriter(file,false);
+        BufferedWriter bw=new BufferedWriter(fw, 688);
+        bw.write(tax.getTaxAccountPrint_list());
+        bw.close();
+        fw.close();
+
+        System.out.println(tax);
+        JOptionPane.showMessageDialog(null, "Tax declarations exported successfully to "+FILE_LOC );
 
 
     }

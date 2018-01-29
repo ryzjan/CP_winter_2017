@@ -189,6 +189,6 @@ public class TaxAccount {
 
     @Override
     public String toString() {
-        return this.getClass().getSimpleName().replace("TaxAccount", "")+TaxAccount_ID+","+Taxpayer.getTaxpayer_ID()+","+Taxpayer.getFirst_name()+","+Taxpayer.getLast_name()+","+Employer.getEmployer_ID()+","+Employer.getEmployer_name()+","+Income+","+DeductibleExpenses+","+Revenue_c+","+Advance+","+SocialInsurance+","+DeductedRevenue_c+","+Tax_Base_c+","+Tax_DeductableAmount_c+","+Tax_c+","+HealthInsurance+","+TaxOutput_c+","+TaxDue_s+","+TaxOverpaid_s+"\n";
+        return this.getClass().getSimpleName().replace("TaxAccount", "")+"\n"+TaxAccount_ID+","+Taxpayer.getTaxpayer_ID()+","+Taxpayer.getFirst_name()+","+Taxpayer.getLast_name()+","+Employer.getEmployer_ID()+","+Employer.getEmployer_name()+","+Income+","+DeductibleExpenses+","+Revenue_c+","+Advance+","+SocialInsurance+","+DeductedRevenue_c+","+Tax_Base_c+","+Tax_DeductableAmount_c+","+Tax_c+","+HealthInsurance+","+TaxOutput_c+","+TaxDue_s+","+TaxOverpaid_s+"\n";
     }
 }

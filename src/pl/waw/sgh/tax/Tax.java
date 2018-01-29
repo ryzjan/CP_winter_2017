@@ -71,11 +71,16 @@ public class Tax {
     public List<TaxAccount> getTaxAccount_list() {
         return TaxAccount_list;
     }
+    public String getTaxAccountPrint_list() {
+
+            return "\nDeclaration_ID,Taxpayer_ID,First_name,Last_name,Employer_ID,Employer_Name,Income,DeductibleExpenses,Revenue,Advance,SocialInsurance,DeductedRevenue,Tax_Base,Tax_DeductableAmount,Tax,HealthInsurance,TaxOutput,TaxDue,TaxOverpaid\n"+TaxAccount_list.toString();
+
+    }
     public void setTaxAccount_list(List<TaxAccount> TaxAccount_list) {
         this.TaxAccount_list = TaxAccount_list;
     }
     @Override
     public String toString() {
-        return "Taxpayers:\n" + Taxpayer_list + ",\n Employers:\n" + Employer_list + ",\n TaxAccounts:\n" + TaxAccount_list;
+        return "Taxpayers:\n"+"Taxpayer_ID,First_name,Last_name\n" + Taxpayer_list + "\n Employers:\n"+"Employer_ID,Employer_Name\n" + Employer_list + "\n TaxAccounts:\n"+"Declaration_ID,Taxpayer_ID,First_name,Last_name,Employer_ID,Employer_Name,Income,DeductibleExpenses,Revenue,Advance,SocialInsurance,DeductedRevenue,Tax_Base,Tax_DeductableAmount,Tax,HealthInsurance,TaxOutput,TaxDue,TaxOverpaid\n" + TaxAccount_list;
     }
 }
